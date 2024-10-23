@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style >
+body
+{
+  border: 3px solid #333;
+        padding: 20px;
+        border-radius: 25px;
+        background-color: #1c1c1c;
+        color: white;
+        font-family: Arial, sans-serif;
+box-shadow:3px 3px  5px gray;
+}
+#topic
+{
+  background-color:chocolate;
+  color:black;
+  border-radius:12px;
+  text-align:center;
+  padding:6px 6px;
+}
+
+#value
+{
+ text-align: left;
+        font-size: 1rem;
+        margin-top: 10px;
+        border: 2px solid #d2691e;
+        border-radius: 5px;
+        width: 95%;
+        padding: 8px;
+        background-color: #f2f2f2;
+        color: black;
+}
+#calculator
+{
+padding: 6px 6px;
+  font-size: 15px;
+  text-align:center;
+  cursor: pointer;
+  outline: none;
+  color:black;
+  background-color:chocolate;
+  border:10px;
+  border-radius:15px;
+  box-shadow:5px 5px  5px gray;
+margin-right:80px;
+margin-top:20px;
+width :100%;
+}
+#reset
+{
+ padding: 6px 6px;
+  font-size: 15px;
+  text-align:center;
+  cursor: pointer;
+  outline: none;
+  color:black;
+  background-color:chocolate;
+  border:10px;
+  border-radius:15px;
+  box-shadow:5px 5px  5px gray;
+margin-top:20px;
+width :100%;
+}
+#reset:hover 
+{
+  background-color:chocolate;
+box-shadow:5px 5px  5px gray;
+}
+#reset:active 
+{
+  background-color:violet;
+  box-shadow:5px 5px gray;
+  transform :translate(4px);
+}
+#calculator:hover 
+{
+  background-color:chocolate;
+box-shadow:5px 5px  5px gray;
+}
+#calculator:active 
+{
+  background-color:violet;
+  box-shadow:5px 5px gray;
+  transform :translate(4px);
+}
+.ans
+{
+color:black;font-size:20px;border:1px solid black;margin:20px;border-radius:10px;padding:20px;box-shadow:5px 5px gray 5px;
+float:bottom;background-color:white;
+}
+</style >
+</head>
+<body>
+<div>
+<h2 id="topic">Average calculator </h2>
+</div>
+<input type="text" id="value" placeholder="Enter the numbers">
+<p style="color:white">use only numbers,comma and dots.</p>
+<div>
+<button id="calculator" onclick="calculator()">Calculator </button >
+<button id="reset" onclick="reset()">reset</button >
+</div>
+<div id="result" class="ans"></div>
+
+
+<script >
+function calculator()
+{
+const value=document.getElementById("value").value;
+const numbers=value.split(',').map(Number);
+let sum = 0;
+for(let i= 0;i<numbers.length; i++) 
+{
+  sum+=numbers[i];
+}
+const Average =sum/   numbers.length;
+const res=document.getElementById("result");
+res.innerHTML=`The Average is:${Average. toFixed(2)}`;
+}
+
+
+function reset()
+{
+document.getElementById("value").value='';
+document.getElementById("result").innerHTML='';
+}
+</script>
+</html>
+
+</script>
+</html>
